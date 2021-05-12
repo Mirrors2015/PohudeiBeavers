@@ -1,14 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var hbs = require('hbs')
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const hbs = require('hbs')
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const registrationRouter = require('./routes/registration');
+const adminRouter = require('./routes/admin');
+const constructorRouter = require('./routes/constructor');
+const loginRouter = require('./routes/login');
+const profileRouter = require('./routes/profile');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'))
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/registration', registrationRouter);
+app.use('/admin', adminRouter);
+app.use('/constructor', constructorRouter);
+app.use('/login', loginRouter);
+app.use('/profile', profileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
