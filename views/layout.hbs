@@ -1,38 +1,20 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="shortcut icon" type="image/jpg" href="/js/favicon.ico" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/header.css" />
+  <link rel="shortcut icon" type="image/jpg" href="/js/favicon.ico" />
+  <script defer src="/js/application.js"></script>
+</head>
 
-  <body>
-    <section>
-      <div>
-
-      </div>
-      <nav>
-        <ul>
-          {{username}}
-          <li><a href="/">main</a></li>
-
-          <li><a href="/login">login</a></li>
-          <li><a href="/registration">registration</a></li>
-          <li><a href="/logout">logout</a></li>
-          <li><a href="/constructor">constructor</a></li>
-          <li><a href="/admin">admin panel</a></li>
-          <li><a href="/profile">profile</a></li>
-
-        </ul>
-      </nav>
-    </section>
-
-    {{!-- {{> header}} --}}
-    {{{body}}}
-    {{!-- {{> footer}} --}}
-  </body>
+<body>
+  {{> header}}
+  {{{body}}}
+  {{!-- {{> footer}} --}}
+</body>
 
 </html>
