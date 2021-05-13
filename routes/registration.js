@@ -31,6 +31,7 @@ router.post("/", async (req, res, next) => {
       roles: [userRole.value],
     });
     await user.save();
+    // req.session.username = req.body.username;
     return res.json({ message: "Пользователь успешно зарегистрован" });
   } catch (error) {
     console.log(error);

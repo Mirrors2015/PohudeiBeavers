@@ -1,6 +1,6 @@
-<form action="/constructor" id="logForm">
-  <input type="text" placeholder="Эл.адрес" required />
-  <input type="text" placeholder="Пароль" required />
+<form action="/login" id="logForm" method="POST">
+  <input name="email" type="text" placeholder="Эл.адрес" required />
+  <input name="password" type="text" placeholder="Пароль" required />
   <button type="submit">Вход</button>
   <button type="reset">Сбросить</button>
 
