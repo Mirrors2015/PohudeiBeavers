@@ -1,9 +1,13 @@
+const session = require("express-session");
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const hbs = require("hbs");
+
+//библиотека для соранения сессий в базе
+const MongoStore = require("connect-mongo");
 
 const indexRouter = require("./routes/index");
 const registrationRouter = require("./routes/registration");
@@ -17,6 +21,20 @@ const app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
+app.use(
+  session({
+    secret: "foo",
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: false },
+    store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/Pohudei" }),
+  })
+);
+app.use((req, res, next) => {
+  res.locals.email = req.session.email;
+
+  next();
+});
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -32,7 +50,7 @@ app.use("/admin", adminRouter);
 app.use("/constructor", constructorRouter);
 app.use("/login", loginRouter);
 app.use("/profile", profileRouter);
-
+//session
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
