@@ -1,7 +1,12 @@
-Регистрация
-<form action="" id="regForm">
-  <input type="text">
-  <input type="text">
-  <input type="text">
-  <button>зарегестрироваться</button>
+<div>Создать аккаунт
+  <p>Быстро и легко.</p>
+</div>
+
+<form action="/registration" id="regForm" method="POST">
+  <input name="username" type="text" placeholder="Имя" required />
+  <input name="email" type="text" placeholder="Эл.адрес" required />
+  <input name="password" type="password" placeholder="Пароль" required />
+  <button type="submit">Регистрация</button>
+  <button type="reset">Сбросить</button>
+
 </form>
