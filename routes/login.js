@@ -13,13 +13,16 @@ router.post("/", async (req, res) => {
     const user = await User.findOne({ email });
     console.log(user);
     if (user && (await bcrypt.compare(password, user.password))) {
+      return res.redirect("/constructor");
+
       // req.session.email = email;
+    } else {
+      res.sendStatus(418);
     }
-    res.redirect("/constructor");
-    const validPassword = bcrypt.compareSync(password, user.password);
-    if (!validPassword) {
-      return res.sendStatus(401);
-    }
+    // const validPassword = bcrypt.compareSync(password, user.password);
+    // if (!validPassword) {
+    // return res.sendStatus(401);
+    // }
   } catch (error) {
     console.log(error);
     res.sendStatus(418);
