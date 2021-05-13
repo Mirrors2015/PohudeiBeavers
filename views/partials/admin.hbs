@@ -1,1 +1,21 @@
-ADMIN
+
+<p>Администаративная панель</p>
+<p>Добавить блюдо </p>
+<p>Все поля обязательные </p>
+<form id="formAdminAdd" method="POST" action="/admin">
+<select name="mealTime"> <!--Supplement an id here instead of using 'name'-->
+  <option value="Breakfast" selected >Завтрак </option>
+  <option value="Lunch">Обед</option>
+  <option value="Supper">Ужин</option>
+  <option value="Snack">Перекус</option>
+</select>
+  <input type="text"  placeholder="Название блюда" name="title" value="Блинчки с мясом"  required pattern="^[А-Яа-яЁё\s]+$">
+  <input type="number" placeholder="Вес в гр" name="weight"  value="32323" required pattern="\d">
+  <input type="number" placeholder="Каллорийность" name="kall"  value="32323" required pattern="\d">
+  <input type="number" placeholder="Белки " name="proteins"  value="32323"  required pattern="\d">
+  <input type="number" placeholder="Жиры" name="fats" value="32323"  required pattern="\d">
+  <input type="number" placeholder="Углеводы" name="carbohydrates" value="32323"  required pattern="\d">
+  <button>сохранить</button>
+</form>
+
+
