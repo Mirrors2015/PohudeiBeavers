@@ -13,6 +13,7 @@ router.post("/", async (req, res) => {
     const user = await User.findOne({ email });
     console.log(user);
     if (user && (await bcrypt.compare(password, user.password))) {
+      req.session.email = email;
       return res.redirect("/constructor");
 
       // req.session.email = email;
@@ -27,6 +28,10 @@ router.post("/", async (req, res) => {
     console.log(error);
     res.sendStatus(418);
   }
+});
+router.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
 });
 
 module.exports = router;

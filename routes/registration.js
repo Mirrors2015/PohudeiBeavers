@@ -29,6 +29,8 @@ router.post("/", async (req, res, next) => {
       roles: [userRole.value],
     });
     await user.save();
+    req.session.email = req.body.email;
+
     // req.session.username = req.body.username;
     return res.redirect("/constructor");
     // return res.json({ message: "Пользователь успешно зарегистрован" });
