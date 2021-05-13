@@ -23,6 +23,11 @@ font-family: 'Work Sans', sans-serif; */
   top: 20px;
 }
 
+.headerSection .headerLogo a {
+  text-decoration: none;
+  color: black;
+}
+
 .burger {
   position: relative;
   top: 34px;
@@ -46,5 +51,5 @@ font-family: 'Work Sans', sans-serif; */
   content: ' | ';
   color: black;
   padding-right: 8px;
-  color: aqua;
+  color: rgb(211, 218, 218);
 }
