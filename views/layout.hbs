@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="shortcut icon" type="image/jpg" href="/js/favicon.ico" />
+    <script defer src="../js/login.js"></script>
+    <script defer src="../js/registration.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
 
   <body>
@@ -16,12 +19,12 @@
       </div>
       <nav>
         <ul>
-          {{username}}
+          <h5>email : {{email}}</h5>
           <li><a href="/">main</a></li>
 
           <li><a href="/login">login</a></li>
           <li><a href="/registration">registration</a></li>
-          <li><a href="/logout">logout</a></li>
+          <li><a href="/login/logout">logout</a></li>
           <li><a href="/constructor">constructor</a></li>
           <li><a href="/admin">admin panel</a></li>
           <li><a href="/profile">profile</a></li>

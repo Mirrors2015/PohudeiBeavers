@@ -1,6 +1,7 @@
-Вход
-<form action="" id="logForm">
-  <input type="text">
-  <input type="text">
-  <button>войти</button>
+<form action="/login" id="logForm" method="POST">
+  <input name="email" type="text" placeholder="Эл.адрес" required />
+  <input name="password" type="text" placeholder="Пароль" required />
+  <button type="submit">Вход</button>
+  <button type="reset">Сбросить</button>
+
 </form>
