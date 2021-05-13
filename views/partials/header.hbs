@@ -1,18 +1,25 @@
 <section class="burgerSection">
   <div class="headerSection">
     <div class="headerLogo">
-      <img src="https://img.icons8.com/ios-filled/100/000000/healthy-eating.png" />
+      <img
+        src="https://img.icons8.com/ios-filled/100/000000/healthy-eating.png"
+      />
       <span>m3nur</span>
     </div>
     <nav class="burger">
       <ul>
         <li><a href="/">main</a></li>
-        <li><a href="/login">login</a></li>
-        <li><a href="/registration">registration</a></li>
-        <li><a href="/logout">logout</a></li>
-        <li><a href="/constructor">constructor</a></li>
-        <li><a href="/admin">admin panel</a></li>
-        <li><a href="/profile">profile</a></li>
+        {{#if email}}
+          <li><a href="/constructor">constructor</a></li>
+          <li><a href="/profile">{{email}}</a></li>
+          <li><a href="/login/logout">logout</a></li>
+          <li><a href="/admin">admin panel</a></li>
+        {{/if}}
+        {{#unless email}}
+          <li><a href="/login">login</a></li>
+          <li><a href="/registration">registration</a></li>
+        {{/unless}}
+
       </ul>
     </nav>
   </div>
