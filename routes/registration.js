@@ -26,7 +26,7 @@ router.post("/", async (req, res, next) => {
       username,
       email,
       password: hashPassword,
-      roles: [userRole.value],
+      // roles: [userRole.value],
     });
     await user.save();
     req.session.email = req.body.email;
