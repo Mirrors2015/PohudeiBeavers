@@ -20,6 +20,11 @@ let array = [{mealTime: 'Завтрак', weight : 150, kall : 300, proteins : 1
 {mealTime: 'Полдник', weight : 50, kall : 50, proteins : 10, fats : 0, carbohydrates : 15, title : 'Сок' },
 {mealTime: 'Полдник', weight : 70, kall : 100, proteins : 6, fats : 7, carbohydrates : 4, title : 'Пирожок с капустой' },
 {mealTime: 'Полдник', weight : 30, kall : 150, proteins : 17, fats : 1, carbohydrates : 6, title : 'Вареное яичко' },
+{mealTime: 'Перекус', weight : 60, kall : 80, proteins : 3, fats : 15, carbohydrates : 10, title : 'Чипсики' },
+{mealTime: 'Перекус', weight : 50, kall : 100, proteins : 4, fats : 11, carbohydrates : 4, title : 'Бутерброд с колбаской' },
+{mealTime: 'Перекус', weight : 10, kall : 50, proteins : 3, fats : 5, carbohydrates : 8, title : 'Конфетка' },
+
+
 ]
 
 function seed(array) {
