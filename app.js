@@ -32,7 +32,8 @@ app.use(
   })
 );
 app.use((req, res, next) => {
-  res.locals.email = req.session.email;
+  res.locals.email = req.session.email; 
+  res.locals.admin = req.session.admin;
 
   next();
 });
