@@ -1,6 +1,6 @@
 const formAdminAdd = document.querySelector("#formAdminAdd");
 
-formAdminAdd.addEventListener("submit", async (e) => {
+formAdminAdd?.addEventListener("submit", async (e) => {
   e.preventDefault();
   console.log("This work!");
 

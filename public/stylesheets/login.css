@@ -16,6 +16,7 @@ font-family: 'Work Sans', sans-serif; */
 }
 
 .loginForm .formLoginDiv::after {
+  z-index: -1;
   left: 370px;
   top: 250px;
   position: absolute;
@@ -28,6 +29,7 @@ font-family: 'Work Sans', sans-serif; */
   opacity: 0.8;
 }
 .loginForm .formLoginDiv::before {
+  z-index: -1;
   right: 522;
   top: -170px;
   border-radius: 50%;
