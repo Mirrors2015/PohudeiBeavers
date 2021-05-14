@@ -42,7 +42,7 @@
     "fresh": "^0.5.2",
     "handlebars": "^4.3.5",
     "has-flag": "^4.0.0",
-    "hbs": "^4.0.6",
+    "hbs": "^4.1.2",
     "http-errors": "^1.6.3",
     "iconv-lite": "^0.4.23",
     "inherits": "^2.0.3",
