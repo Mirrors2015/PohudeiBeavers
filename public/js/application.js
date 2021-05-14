@@ -162,13 +162,13 @@ cCalForm?.addEventListener("submit", async (event) => {
           const spanCarbo = document.createElement("span");
           const weight = document.createElement("span");
   
-          li.innerText = `${element.title}`;
+          li.innerText = `Название:${element.title}`;
           li.id = element._id;
           spanCcal.innerText = `Количество каллорий: ${element.kall}`;
-          spanProt.innerText = `Количество протеинов (гр.): ${element.proteins}`;
-          spanFats.innerText = `Количество жиров (гр.): ${element.fats}`;
-          spanCarbo.innerText = `Количество углеводов (гр.): ${element.carbohydrates}`;
-          weight.innerText = `Масса (гр.): ${element.weight}`;
+          spanProt.innerText = `Количество протеинов : ${element.proteins}(гр.)`;
+          spanFats.innerText = `Количество жиров : ${element.fats}(гр.)`;
+          spanCarbo.innerText = `Количество углеводов : ${element.carbohydrates}(гр.)`;
+          weight.innerText = `Масса : ${element.weight}(гр.)`;
   
           ul.appendChild(li);
           li.appendChild(spanCcal);
