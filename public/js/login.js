@@ -23,6 +23,6 @@ logForm.addEventListener("submit", async (event) => {
       text: "Пользователя с таким эл.адрес не существует",
     });
   } else {
-    window.location = "/constructor";
+    window.location = "/admin";
   }
 });
