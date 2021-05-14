@@ -16,7 +16,6 @@ regForm.addEventListener("submit", async (event) => {
     body: JSON.stringify({ username, email, password }),
   });
   console.log(res.status);
-  // const response = await res.json();
   if (res.status !== 200) {
     Swal.fire({
       icon: "error",

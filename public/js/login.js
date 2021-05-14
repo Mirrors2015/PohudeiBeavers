@@ -15,7 +15,6 @@ logForm.addEventListener("submit", async (event) => {
     body: JSON.stringify({ email, password }),
   });
   console.log(res.status);
-  // const response = await res.json();
   if (res.status !== 200) {
     Swal.fire({
       icon: "error",
@@ -23,6 +22,6 @@ logForm.addEventListener("submit", async (event) => {
       text: "Пользователя с таким эл.адрес не существует",
     });
   } else {
-    window.location = "/admin";
+    window.location = "/constructor";
   }
 });

@@ -21,10 +21,6 @@ router.post("/", async (req, res) => {
     } else {
       res.sendStatus(418);
     }
-    // const validPassword = bcrypt.compareSync(password, user.password);
-    // if (!validPassword) {
-    // return res.sendStatus(401);
-    // }
   } catch (error) {
     console.log(error);
     res.sendStatus(418);
