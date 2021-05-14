@@ -85,6 +85,7 @@ cCalForm.addEventListener("submit", async (event) => {
     
 
     let keys = Object.values(res);
+    console.log(keys);
     
     keys.forEach((obj) => {
       switch (obj[0].mealTime) {
