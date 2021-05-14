@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=KoHo:wght@200;300;400;500;600;700&family=Quicksand:wght@300&family=Work+Sans:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=KoHo:wght@200;300;400;500;600;700&family=Quicksand:wght@300&family=Work+Sans:wght@300;400&display=swap");
 
 /* font-family: 'Josefin Sans', sans-serif;
 font-family: 'KoHo', sans-serif;
@@ -13,7 +13,7 @@ font-family: 'Work Sans', sans-serif; */
   left: 100px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px 5px rgb(34 60 80 / 10%);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@ font-family: 'Work Sans', sans-serif; */
   border-radius: 20px;
 }
 
-.adminSection .adminDiv  .mealTime {
+.adminSection .adminDiv .mealTime {
   width: 1210px;
   height: 150px;
   position: absolute;
@@ -95,7 +95,7 @@ font-family: 'Work Sans', sans-serif; */
   padding: 20px 30px;
   margin: 0 40px;
   box-shadow: 0px 0px 4px 5px rgb(34 60 80 / 5%);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 25px;
 }
 
@@ -127,10 +127,14 @@ font-family: 'Work Sans', sans-serif; */
   width: 300px;
   top: 110px;
   left: 60px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
 }
-.adminSection .adminDiv .mealTitle .forDisplayDontTouchBeach .cuteInputsByNurbek {
+.adminSection
+  .adminDiv
+  .mealTitle
+  .forDisplayDontTouchBeach
+  .cuteInputsByNurbek {
   border-radius: 10px;
   width: 300px;
   display: flex;
@@ -140,8 +144,8 @@ font-family: 'Work Sans', sans-serif; */
   margin: 50px 40px;
   box-shadow: 0px 0px 4px 5px rgb(0 0 0 / 10%);
   border: none;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
 }
 
 .adminSection .adminDiv .btnByNurbek {
@@ -157,14 +161,14 @@ font-family: 'Work Sans', sans-serif; */
   width: 300px;
   color: #777777;
   font-size: 25px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 input {
   outline: none;
 }
 
-input::placeholder{
+input::placeholder {
   color: black;
 }
 
