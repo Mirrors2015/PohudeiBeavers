@@ -12,8 +12,7 @@ const mongoose = require("mongoose");
 /**
  * Get port from environment and store in Express.
  */
-const urlMongo =
-  "mongodb+srv://admin:admin@cluster0.pbna6.mongodb.net/Pohudei?retryWrites=true&w=majority";
+const urlMongo = "mongodb+srv://admin:admin@cluster0.pbna6.mongodb.net/Pohudei?retryWrites=true&w=majority";
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
