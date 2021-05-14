@@ -24,6 +24,6 @@ regForm.addEventListener("submit", async (event) => {
       text: "Пользователь с таким эл.адресом уже существует",
     });
   } else {
-    window.location = "/constructor";
+    window.location = "/";
   }
 });

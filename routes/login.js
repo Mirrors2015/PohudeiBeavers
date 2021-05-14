@@ -16,7 +16,6 @@ router.post("/", async (req, res) => {
       req.session.email = email;
       if (email === "admin@admin.ru") {
         req.session.admin = email;
-        console.log("ADMIN  ADMIN!!!!!!!!!");
       }
       return res.redirect("/constructor");
     } else {
