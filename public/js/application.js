@@ -100,31 +100,32 @@ cCalForm?.addEventListener("submit", async (event) => {
     
     
     keys.forEach(arr => {
-    arr.forEach(el => {
 
-    
 
-      switch (el.mealTime) {
+    console.log(arr);
+
+      switch (arr[0].mealTime) {
         case "Завтрак":
           const breackfast = document.createElement("h1");
           
-          breackfast.innerText = `${el.mealTime}`;
+          breackfast.innerText = `${arr[0].mealTime}`;
           ul.appendChild(breackfast);
           break;
           case "Обед":
             const obed = document.createElement("h1");
-            obed.innerText = `${el.mealTime}`;
+            obed.innerText = `${arr[0].mealTime}`;
             ul.appendChild(obed);
             break;
             case "Ужин":
+              console.log('work');
           const yzhin = document.createElement("h1");
-          yahin.innerText = `${el.mealTime}`;
+          yzhin.innerText = `${arr[0].mealTime}`;
           ul.append(yzhin);
           break;
           // ===================================================
           case "Перекус":
           const perekus = document.createElement("h1");
-          perekus.innerText = `${el.mealTime}`;
+          perekus.innerText = `${arr[0].mealTime}`;
           ul.append(perekus);
           break;
         default:
@@ -158,7 +159,7 @@ cCalForm?.addEventListener("submit", async (event) => {
 
 
         })
-      });
+
     });
   } else {
     console.log("Error");
