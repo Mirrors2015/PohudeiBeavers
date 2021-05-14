@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Food = require("../models/food");
+console.log(Food)
 
 router.get("/", function (req, res, next) {
   res.render("partials/constructor");
@@ -58,10 +59,9 @@ const carbohydratesS = req.body.carbohydratesS;
     
 
     // console.log('=========protiki',proteinsB)
-    // console.log('=========sziri',fatsB)
-    // console.log('=========uglevodi',carbohydratesB)
-    // console.log('=========min',kallBreakfastMin)
-    // console.log('=========max',kallBreakfastMax)
+
+    console.log('=========min',kallBreakfastMin)
+    console.log('=========max',kallBreakfastMax)
 if (mealTime === 3) {
     const breakfast = await Food.find({
       mealTime: "Завтрак",
@@ -71,14 +71,26 @@ if (mealTime === 3) {
   //  console.log( 'завтрак==============================' ,breakfast);
 
 
+
+
+  //  console.log( 'obed==============================' ,obed);
+  //  console.log('=========min',kallBreakfastMin)
+  //  console.log('=========max',kallBreakfastMax)
+
     const obed = await Food.find({ mealTime: "Обед",
     kall: { $gte: kallDinnerMin, $lte: kallDinnerMax },
-    proteins: { $gte: Math.round(proteinsD * procentFatalMin),$lte: Math.round(proteinsD * procentFatalMax)},
+    // proteins: { $gte: Math.round(proteinsD * procentFatalMin),$lte: Math.round(proteinsD * procentFatalMax)},
    });
+   console.log( '==============================,yzhin' );
+   console.log('=========min',kallNightDinnerMin)
+   console.log('=========max',kallNightDinnerMax)
+   console.log('=========protici',proteinsN)
+
     const yzhin = await Food.find({ mealTime: "Ужин",
     kall: { $gte: kallNightDinnerMin, $lte: kallNightDinnerMax },
     proteins: { $gte: Math.round(proteinsN * procentFatalMin),$lte: Math.round(proteinsN * procentFatalMax)},
    });
+   console.log(yzhin);
    return res.json({ breakfast, obed, yzhin});
 
   }
