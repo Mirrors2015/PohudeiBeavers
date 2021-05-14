@@ -1,5 +1,4 @@
-console.log(1111);
-// const photo = document.querySelector("#photo"); // убрать?
+
 
 
 async function a() {
@@ -28,6 +27,8 @@ const cCalForm = document.querySelector("#cCalForm");
 cCalForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   let planFood = event.target.planFood.value; // значение БЖУ 25.25.50
+  let mealTime = Number(event.target.current.value)
+  
 
   let kall = Number(event.target.minCCal.value); // значение введенных каллорий
 
@@ -40,22 +41,27 @@ cCalForm?.addEventListener("submit", async (event) => {
 
   //Расчет БЖУ для завтрака
   let proteinsB = Math.round(proteins * (breackfastPocent / 100)); //процент протеинов для завтрака
-  let fatsB = Math.round(fats * (breackfastPocent / 100)); //процент протеинов для завтрака
+  let fatsB = Math.round(fats * (breackfastPocent / 100)); //процент жиров для завтрака
   let carbohydratesB = Math.round(carbohydrates * (breackfastPocent / 100)); //процент протеинов для завтрака
   // Расчет БЖУ для обеда
   //=======================Пишу я =====================================
   let proteinsD = Math.round(proteins * (dinnerPocent / 100)); //процент протеинов для обеда
-  let fatsD = Math.round(fats * (dinnerPocent / 100)); //процент протеинов для обеда
-  let carbohydratesD = Math.round(carbohydrates * (dinnerPocent / 100)); //процент протеинов для обеда
+  let fatsD = Math.round(fats * (dinnerPocent / 100)); //процент жиров для обеда
+  let carbohydratesD = Math.round(carbohydrates * (dinnerPocent / 100)); //процент углеводов для обеда
 
   // //Расчет БЖУ для ужина
   let proteinsN = Math.round(proteins * (dinnerNightProcent / 100)); //процент протеинов для ужина
-  let fatsN = Math.round(fats * (dinnerNightProcent / 100)); //процент протеинов для ужина
-  let carbohydratesN = Math.round(carbohydrates * (dinnerNightProcent / 100)); //процент протеинов для ужина
+  let fatsN = Math.round(fats * (dinnerNightProcent / 100)); //процент жиров для ужина
+  let carbohydratesN = Math.round(carbohydrates * (dinnerNightProcent / 100)); //процент углеводов для ужина
 
-  console.log("protiki", proteinsD);
-  console.log("fats", fatsD);
-  console.log("carbohydrates", carbohydratesD);
+  // //Расчет БЖУ для перекуса
+  let proteinsS = Math.round(proteins * (snackProcent / 100)); //процент протеинов для перекуса
+  let fatsS = Math.round(fats * (snackProcent / 100)); //процент жиров для перекуса
+  let carbohydratesS = Math.round(carbohydrates * (snackProcent / 100)); //процент углеводов для перекуса
+
+  console.log("protiki", proteinsB);
+  console.log("fats", fatsB);
+  console.log("carbohydrates", carbohydratesB);
   
   const ul = await document.querySelector("#ulList");
   
@@ -76,44 +82,81 @@ cCalForm?.addEventListener("submit", async (event) => {
         carbohydratesD,
         proteinsN,
         fatsN,
-        carbohydratesN
+        carbohydratesN,
+        proteinsS,
+        fatsS,
+        carbohydratesS,
+        mealTime
       }),
     });
     
     const res = await result.json();
+    console.log(res)
     
     
 
     let keys = Object.values(res);
     
-    keys.forEach((obj) => {
-      switch (obj[0].mealTime) {
+    
+    keys.forEach(arr => {
+    arr.forEach(el => {
+
+    
+
+      switch (el.mealTime) {
         case "Завтрак":
           const breackfast = document.createElement("h1");
           
-          breackfast.innerText = `${obj[0].mealTime}`;
+          breackfast.innerText = `${el.mealTime}`;
           ul.appendChild(breackfast);
           break;
           case "Обед":
             const obed = document.createElement("h1");
-            obed.innerText = `${obj[0].mealTime}`;
+            obed.innerText = `${el.mealTime}`;
             ul.appendChild(obed);
             break;
             case "Ужин":
-          const yahin = document.createElement("h1");
-          yahin.innerText = `${obj[0].mealTime}`;
-          ul.append(yahin);
+          const yzhin = document.createElement("h1");
+          yahin.innerText = `${el.mealTime}`;
+          ul.append(yzhin);
+          break;
+          // ===================================================
+          case "Перекус":
+          const perekus = document.createElement("h1");
+          perekus.innerText = `${el.mealTime}`;
+          ul.append(perekus);
           break;
         default:
           break;
       }
 
-      obj.forEach((element) => {
+      arr.forEach((element) => {
         const li = document.createElement("li");
+        const spanCcal = document.createElement('span')
+        const spanProt = document.createElement('span')
+        const spanFats = document.createElement('span')
+        const spanCarbo = document.createElement('span')
+        const weight = document.createElement('span')
+
+
         li.innerText = `${element.title}`;
         li.id = element._id
-        
+        spanCcal.innerText = `Количество каллорий: ${element.kall}`
+        spanProt.innerText = `Количество протеинов (гр.): ${element.proteins}`
+        spanFats.innerText = `Количество жиров (гр.): ${element.fats}`
+        spanCarbo.innerText = `Количество углеводов (гр.): ${element.carbohydrates}`
+        weight.innerText = `Масса (гр.): ${element.weight}`
+
+
         ul.appendChild(li);
+        ul.appendChild(spanCcal)
+        ul.appendChild(spanProt)
+        ul.appendChild(spanFats)
+        ul.appendChild(spanCarbo)
+        ul.appendChild(weight)
+
+
+        })
       });
     });
   } else {

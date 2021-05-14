@@ -13,9 +13,10 @@ router.post("/", async (req, res) => {
   const procentFatalMax = 1.10; // максимальная погрешность
   const procentFatalMin = 0.85; // минимальная погрешность
   
-  console.log("---------------", req.body);
+ 
   if (req.body) {
     // Минимальная и максимальная каллорийность для завтрака
+    console.log(req.body)
     const { minimum, maximum } = req.body;
     const kallBreakfastMax = maximum * 0.3;
     const kallBreakfastMin = minimum * 0.3;
@@ -23,7 +24,10 @@ router.post("/", async (req, res) => {
     const proteinsB = req.body.proteinsB;
     const fatsB = req.body.fatsB;
     const carbohydratesB = req.body.carbohydratesB;
-    console.log(proteinsB);
+
+    const mealTime = req.body.mealTime
+    console.log(mealTime);
+   
     // =======================Пишу я====================================
     // Минимальная и максимальная каллорийность для обеда
     const kallDinnerMax = maximum * 0.35;
@@ -41,23 +45,31 @@ const proteinsN = req.body.proteinsN;
 const fatsN = req.body.fatsN;
 const carbohydratesN = req.body.carbohydratesN;
 
+// Минимальная и максимальная каллорийность для перекуса
+const kallSnackMax = maximum * 0.1;
+const kallSnackMin = minimum * 0.1;
+// БЖУ для перекуса
+const proteinsS = req.body.proteinsS;
+const fatsS = req.body.fatsS;
+const carbohydratesS = req.body.carbohydratesS;
 
-    // console.log("Max = ", kallBreakfastMax);
-    // console.log("Min = ", kallBreakfastMin);
-    // console.log("MaxproteinsB = ", Math.round(proteinsB * procentFatalMax));
-    // console.log("MinproteinsB = ", Math.round(proteinsB * procentFatalMin));
-
-    // console.log("fatsB = ", fatsB);
-    // console.log("carbohydratesB = ", carbohydratesB);
-
-    
 
     
+    
+
+    // console.log('=========protiki',proteinsB)
+    // console.log('=========sziri',fatsB)
+    // console.log('=========uglevodi',carbohydratesB)
+    // console.log('=========min',kallBreakfastMin)
+    // console.log('=========max',kallBreakfastMax)
+if (mealTime === 3) {
     const breakfast = await Food.find({
       mealTime: "Завтрак",
       kall: { $gte: kallBreakfastMin, $lte: kallBreakfastMax },
       proteins: { $gte: Math.round(proteinsB * procentFatalMin),$lte: Math.round(proteinsB * procentFatalMax)},
     });
+  //  console.log( 'завтрак==============================' ,breakfast);
+
 
     const obed = await Food.find({ mealTime: "Обед",
     kall: { $gte: kallDinnerMin, $lte: kallDinnerMax },
@@ -67,10 +79,19 @@ const carbohydratesN = req.body.carbohydratesN;
     kall: { $gte: kallNightDinnerMin, $lte: kallNightDinnerMax },
     proteins: { $gte: Math.round(proteinsN * procentFatalMin),$lte: Math.round(proteinsN * procentFatalMax)},
    });
-    const poldnik = await Food.find({ mealTime: "Полдник" });
-   
+   return res.json({ breakfast, obed, yzhin});
 
-    return res.json({ breakfast, obed, yzhin });
+  }
+   // ====================== Добавил полдник =================================================
+
+   
+    const perecus = await Food.find({ mealTime: "Перекус",
+    kall: { $gte: kallSnackMin, $lte: kallSnackMax },
+    proteins: { $gte: Math.round(proteinsS * procentFatalMin),$lte: Math.round(proteinsS * procentFatalMax)},
+   });
+   
+  //  console.log( 'perecus==============================' ,perecus);
+    // return res.json({ breakfast, obed, yzhin, perecus });
 
     
   } else {
