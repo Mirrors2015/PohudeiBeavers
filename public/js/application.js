@@ -25,7 +25,7 @@ const snackProcent = 10;
 const cCalForm = document.querySelector("#cCalForm");
 
 
-cCalForm.addEventListener("submit", async (event) => {
+cCalForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   let planFood = event.target.planFood.value; // значение БЖУ 25.25.50
 
