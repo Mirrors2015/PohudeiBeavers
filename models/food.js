@@ -1,6 +1,6 @@
 const mongoose  = require('mongoose')
 
-// const
+
 const foodSchema = mongoose.Schema({
   mealTime: String,
   weight: Number ,
@@ -15,3 +15,4 @@ const Food = mongoose.model('Food', foodSchema)
 
 
 module.exports = Food;
+

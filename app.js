@@ -15,6 +15,7 @@ const adminRouter = require("./routes/admin");
 const constructorRouter = require("./routes/constructor");
 const loginRouter = require("./routes/login");
 const profileRouter = require("./routes/profile");
+// const contructorRouter = require("./routes/constructor")  //  Добавил
 
 const app = express();
 

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Food = require("../db/food");
+const Food = require("../models/food");
 
 // mealTime: String,
 // weight: Number ,
