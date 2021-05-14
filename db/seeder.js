@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Food = require('./food')
+const Food = require('../models/food')
 const chalk = require('chalk')
 
 
@@ -25,7 +25,7 @@ let array = [{mealTime: 'Завтрак', weight : 150, kall : 300, proteins : 1
 function seed(array) {
   mongoose.connect('mongodb://localhost:27017/Pohudei', {useNewUrlParser: true, useUnifiedTopology: true});
   console.log(chalk.red('Сервер стартанул, все норм'))
-  QuestionModel.insertMany(array)
+  Food.insertMany(array)
 
 }
 
