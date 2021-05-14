@@ -3,11 +3,12 @@
   <label for="">Введи количество каллорий</label> <br>
   <input placeholder="minCcal" type="text" value="" name="minCCal">
   <button name="btn">Отправить</button>
-  <select>
-      <option value="">choose mealTime</option>
-      <option value="dristch">3</option>
-      <option value="norm">4</option>
-      <option value="zhirobas">5</option>
+      <label for="">ВЫбери количество приемов пищи</label>
+  <select name="current">
+      {{!-- <option value="chooseMealTime">choose mealTime</option> --}}
+      <option selected value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
     </select>
       <select name="planFood">
       <option selected value="25/25/50">25Б/25Ж/50У</option>
