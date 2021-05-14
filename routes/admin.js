@@ -17,16 +17,23 @@ router
   })
   .post(async (req, res, next) => {
     const success = `Блюда добавлены`;
-    const error = "Не все поля заполнены";
+    let error = "Не все поля заполнены";
     try {
       //диструктуризация обьекта в переменные
-      const { mealTime, title, weight, kall, proteins, fats, carbohydrates } =
-        req.body;
-      // title = title.toUpperCase();
-      console.log(title);
+      let { mealTime, title, weight, kall, proteins, fats, carbohydrates } = req.body;
+      
+      let findTitle = await Food.find({title});
+
+      if(findTitle.length  !== 0) {
+        // console.log("Данные не внесены");
+        error ='Блюдо уже внесено !'
+        return res.status(300).json({ error });
+      }
+
       //проверка на заполенность полей
-      if (title && weight && kall && proteins && fats && carbohydrates) {
+      if (mealTime, title && weight && kall && proteins && fats && carbohydrates) {
         await Food.create({
+          mealTime,
           title,
           weight,
           kall,

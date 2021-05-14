@@ -2,23 +2,23 @@ const formAdminAdd = document.querySelector("#formAdminAdd");
 
 formAdminAdd.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log("This work!");
 
   let title = await formAdminAdd.title.value;
   title = title.toLowerCase();
 
+  const mealTime = formAdminAdd.mealTime.value;
   const weight = formAdminAdd.weight.value;
   const kall = formAdminAdd.kall.value;
   const proteins = formAdminAdd.proteins.value;
   const fats = formAdminAdd.fats.value;
   const carbohydrates = formAdminAdd.carbohydrates.value;
-  // console.log(title);
   const res = await fetch("/admin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      mealTime,
       title,
       weight,
       kall,
@@ -28,7 +28,6 @@ formAdminAdd.addEventListener("submit", async (e) => {
     }),
   });
 
-  console.log(res.status);
   if (res.ok) {
     const response = await res.json();
 

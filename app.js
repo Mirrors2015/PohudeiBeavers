@@ -15,6 +15,7 @@ const adminRouter = require("./routes/admin");
 const constructorRouter = require("./routes/constructor");
 const loginRouter = require("./routes/login");
 const profileRouter = require("./routes/profile");
+const {urlMongo} = require("./bin/www");
 // const contructorRouter = require("./routes/constructor")  //  Добавил
 
 const app = express();
@@ -28,7 +29,7 @@ app.use(
     resave: true,
     saveUninitialized: true,
     cookie: { secure: false },
-    store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/Pohudei" }),
+    store: MongoStore.create({ mongoUrl: "mongodb+srv://admin:admin@cluster0.pbna6.mongodb.net/Pohudei?retryWrites=true&w=majority" }),
   })
 );
 app.use((req, res, next) => {
