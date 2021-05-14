@@ -6,27 +6,27 @@
     </div>
     <form id="formAdminAdd" method="POST" action="/admin">
       <div class="mealTime">
-      <p class="mealTimeName">Add dish</p>
+      <p class="mealTimeName">Add Food</p>
       <p class="mealTimeName red">All fields are required!!!</p>
       </div>
       <div class="mealTitle">
         <select name="mealTime" class="mealTimeName">
           <!--Supplement an id here instead of using 'name'-->
-          <option class="mealTimeName" value="Breakfast" selected> Завтрак </option>
-          <option class="mealTimeName" value="Lunch">Обед</option>
-          <option class="mealTimeName" value="Supper">Ужин</option>
-          <option class="mealTimeName" value="Snack">Перекус</option>
+          <option class="mealTimeName" value="Breakfast" selected> Breakfast </option>
+          <option class="mealTimeName" value="Lunch">Lunch</option>
+          <option class="mealTimeName" value="Supper">Dinner</option>
+          <option class="mealTimeName" value="Snack">Snack</option>
         </select>
         <div class="firstMealInput forDisplayDontTouchBeach">
-          <input class="cuteInputsByNurbek" type="text" placeholder="Название блюда" name="title" required
+          <input class="cuteInputsByNurbek" type="text" placeholder="Name Of The Food" name="title" required
             pattern="^[А-Яа-яЁё\s]+$">
-          <input class="cuteInputsByNurbek" type="number" placeholder="Вес в гр" name="weight" required pattern="\d">
-          <input class="cuteInputsByNurbek" type="number" placeholder="Каллорийность" name="kall" required pattern="\d">
+          <input class="cuteInputsByNurbek" type="number" placeholder="Weight In GR" name="weight" required pattern="\d">
+          <input class="cuteInputsByNurbek" type="number" placeholder="Calorie Content" name="kall" required pattern="\d">
         </div>
         <div class="secondMealInput forDisplayDontTouchBeach">
-          <input class="cuteInputsByNurbek" type="number" placeholder="Белки " name="proteins" required pattern="\d">
-          <input class="cuteInputsByNurbek" type="number" placeholder="Жиры" name="fats" required pattern="\d">
-          <input class="cuteInputsByNurbek" type="number" placeholder="Углеводы" name="carbohydrates" required
+          <input class="cuteInputsByNurbek" type="number" placeholder="Protein " name="proteins" required pattern="\d">
+          <input class="cuteInputsByNurbek" type="number" placeholder="Fats" name="fats" required pattern="\d">
+          <input class="cuteInputsByNurbek" type="number" placeholder="Carbohydrates" name="carbohydrates" required
             pattern="\d">
         </div>
         <button class="btnByNurbek">Submit</button>
