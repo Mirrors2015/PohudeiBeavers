@@ -9,13 +9,14 @@
   <option value="Supper">Ужин</option>
   <option value="Snack">Перекус</option>
 </select>
-  <input type="text"  placeholder="Название блюда" name="title" value="Блинчки с мясом"  required pattern="^[А-Яа-яЁё\s]+$">
-  <input type="number" placeholder="Вес в гр" name="weight"  value="32323" required pattern="\d">
-  <input type="number" placeholder="Каллорийность" name="kall"  value="32323" required pattern="\d">
-  <input type="number" placeholder="Белки " name="proteins"  value="32323"  required pattern="\d">
-  <input type="number" placeholder="Жиры" name="fats" value="32323"  required pattern="\d">
-  <input type="number" placeholder="Углеводы" name="carbohydrates" value="32323"  required pattern="\d">
-  <button>сохранить</button>
+  <label for=""><input type="text"  placeholder="Название блюда" name="title" value="Название блюда"  required pattern="^[A-Za-zА-Яа-яЁё\s]+$"></label>
+  <label for="">  <input type="number" placeholder="Вес" name="weight"  value="1" required pattern="\d">гр</label>
+  <label for="">  <input type="number" placeholder="Каллорийность" name="kall"  value="1" required pattern="\d">гр</label>
+  <label for="">  <input type="number" placeholder="Белки " name="proteins"  value="1"  required pattern="\d">гр</label>
+  <label for="">  <input type="number" placeholder="Жиры" name="fats" value="1"  required pattern="\d">гр</label>
+  <label for="">  <input type="number" placeholder="Углеводы" name="carbohydrates" value="1"  required pattern="\d">гр</label>
+
+  <button>Сохранить</button>
 </form>
 
 
