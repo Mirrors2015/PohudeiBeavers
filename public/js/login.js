@@ -1,6 +1,6 @@
 const logForm = document.querySelector("#logForm");
 
-logForm.addEventListener("submit", async (event) => {
+logForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   console.log(logForm);
 
