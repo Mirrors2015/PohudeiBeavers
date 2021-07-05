@@ -1,6 +1,6 @@
 const regForm = document.querySelector("#regForm");
 
-regForm.addEventListener("submit", async (event) => {
+regForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   console.log(regForm);
 
@@ -16,7 +16,6 @@ regForm.addEventListener("submit", async (event) => {
     body: JSON.stringify({ username, email, password }),
   });
   console.log(res.status);
-  // const response = await res.json();
   if (res.status !== 200) {
     Swal.fire({
       icon: "error",
@@ -24,6 +23,6 @@ regForm.addEventListener("submit", async (event) => {
       text: "Пользователь с таким эл.адресом уже существует",
     });
   } else {
-    window.location = "/constructor";
+    window.location = "/";
   }
 });

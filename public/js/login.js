@@ -1,6 +1,6 @@
 const logForm = document.querySelector("#logForm");
 
-logForm.addEventListener("submit", async (event) => {
+logForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   console.log(logForm);
 
@@ -15,7 +15,6 @@ logForm.addEventListener("submit", async (event) => {
     body: JSON.stringify({ email, password }),
   });
   console.log(res.status);
-  // const response = await res.json();
   if (res.status !== 200) {
     Swal.fire({
       icon: "error",

@@ -14,16 +14,13 @@ router.post("/", async (req, res) => {
     console.log(user);
     if (user && (await bcrypt.compare(password, user.password))) {
       req.session.email = email;
+      if (email === "admin@admin.ru") {
+        req.session.admin = email;
+      }
       return res.redirect("/constructor");
-
-      // req.session.email = email;
     } else {
       res.sendStatus(418);
     }
-    // const validPassword = bcrypt.compareSync(password, user.password);
-    // if (!validPassword) {
-    // return res.sendStatus(401);
-    // }
   } catch (error) {
     console.log(error);
     res.sendStatus(418);
